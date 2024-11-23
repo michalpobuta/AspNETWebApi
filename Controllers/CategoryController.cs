@@ -37,7 +37,7 @@ public class CategoryController: ControllerBase
     {
         try
         {
-            return Ok(await _resourceService.GetResourceById(id));
+            //Get Category for ID = id
         }
         catch (KeyNotFoundException e)
         {
@@ -49,52 +49,9 @@ public class CategoryController: ControllerBase
         }
     }
 
-    [HttpPost]
-    public async Task<IActionResult> PostCategory(CategoryModel category)
-    {
-        try
-        {
-            return Ok(await _resourceService.Create(category));
-        }
-        catch (Exception e)
-        {
-            return StatusCode(500, e.Message);
-        }
-    }
+   // Post Category
 
-    [HttpPut]
-    public async Task<IActionResult> PutCategory(CategoryModel category)
-    {
-        try
-        {
-            await _resourceService.Update(category);
-            return Ok();
-        }
-        catch (KeyNotFoundException e)
-        {
-            return NotFound("Category not found");
-        }
-        catch (Exception e)
-        {
-            return StatusCode(500, e.Message);
-        }
-    }
+    // Put Category
 
-    [HttpDelete]
-    public async Task<IActionResult> DeleteCategory(CategoryModel category)
-    {
-        try
-        {
-            await _resourceService.Delete(category);
-            return Ok();
-        }
-        catch (KeyNotFoundException e)
-        {
-            return NotFound("Category not found");
-        }
-        catch (Exception e)
-        {
-            return StatusCode(500, e.Message);
-        }
-    }
+    // Delete Category
 }
