@@ -9,7 +9,8 @@ public static class ContainerHelper
     {
         services.AddSingleton<IResourceService<CategoryModel>, CategoryService>();
         services.AddSingleton<IResourceService<TaskModel>, TaskService>();
-
+        services.AddSingleton<IResourceService<UserModel>, UserService>();
+        services.AddTransient<AuthService>();
         return services;
     }
 }

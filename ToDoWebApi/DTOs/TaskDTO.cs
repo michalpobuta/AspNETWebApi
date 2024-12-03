@@ -1,8 +1,9 @@
+using ToDoWebApi.Models;
 using ToDoWebApi.Utils;
 
-namespace ToDoWebApi.Models;
+namespace ToDoWebApi.DTOs;
 
-public class TaskModel : ModelBase
+public class TaskDTO
 {
     public string? Title { get; set; }
     public State State { get; set; }
@@ -11,4 +12,3 @@ public class TaskModel : ModelBase
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
 }
-
